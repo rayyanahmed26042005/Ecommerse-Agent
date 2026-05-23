@@ -8,8 +8,8 @@ services:
     env_file:
       - ./backend/.env
     environment:
-      DATABASE_URL: postgresql+asyncpg://ecoai:ecoai@postgres:5432/ecoai
-      DATABASE_URL_SYNC: postgresql://ecoai:ecoai@postgres:5432/ecoai
+      DATABASE_URL: postgresql+asyncpg://REPLACE_ME:REPLACE_ME@postgres:5432/ecoai
+      DATABASE_URL_SYNC: postgresql://REPLACE_ME:REPLACE_ME@postgres:5432/ecoai
       REDIS_URL: redis://redis:6379/0
       CELERY_BROKER_URL: redis://redis:6379/1
       CELERY_RESULT_BACKEND: redis://redis:6379/2
@@ -70,7 +70,7 @@ services:
     image: postgres:16-alpine
     environment:
       POSTGRES_USER: ecoai
-      POSTGRES_PASSWORD: ecoai
+      POSTGRES_PASSWORD: REPLACE_ME
       POSTGRES_DB: ecoai
     ports:
       - "5432:5432"
