@@ -1,0 +1,44 @@
+# Web
+fastapi>=0.115.0
+uvicorn[standard]>=0.32.0
+pydantic>=2.9.0
+pydantic-settings>=2.6.0
+python-multipart>=0.0.12
+
+# Database
+sqlalchemy[asyncio]>=2.0.36
+asyncpg>=0.30.0
+psycopg2-binary>=2.9.10
+
+# Redis & Celery
+redis>=5.2.0
+celery[redis]>=5.4.0
+flower>=2.0.1
+
+# Agent / LLM
+langgraph>=0.2.50
+langchain-core>=0.3.0
+httpx>=0.27.0
+tenacity>=9.0.0
+
+# Search & scraping
+duckduckgo-search>=6.3.0
+praw>=7.8.0
+
+# Auth
+python-jose[cryptography]>=3.3.0
+passlib[bcrypt]>=1.7.4
+
+# Observability
+structlog>=24.4.0
+prometheus-client>=0.21.0
+opentelemetry-api>=1.28.0
+opentelemetry-sdk>=1.28.0
+opentelemetry-instrumentation-fastapi>=0.49b0
+opentelemetry-exporter-otlp-proto-grpc>=1.28.0
+
+# Vector DB (optional)
+qdrant-client>=1.12.0
+
+# Utils
+python-dotenv>=1.0.1

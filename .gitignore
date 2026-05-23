@@ -1,0 +1,45 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+env/
+venv/
+backend/venv/
+backend/.venv/
+
+# Environment files
+.env
+*.env
+backend/.env
+frontend-repo_u56xm4a6_uhny8m-main/.env
+
+# Node
+node_modules/
+frontend-repo_u56xm4a6_uhny8m-main/node_modules/
+
+# Build
+dist/
+build/
+
+# Docker
+docker-compose.override.yml
+**/docker-compose.override.yml
+
+# VS Code
+.vscode/
+
+# Logs
+logs/
+*.log
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDEs
+.idea/
+
+# Misc
+*.sqlite3
+*.db

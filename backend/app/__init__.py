@@ -1,0 +1,1 @@
+"""EcoAi Smart Shopping backend."""

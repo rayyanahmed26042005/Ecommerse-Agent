@@ -1,0 +1,801 @@
+================================================================================
+[2026-05-23 21:22:48.120] EVENT: CHAT_REQUEST_RECEIVED
+  user_id: demo-user-1
+  message: winter camping kit under ₹3000
+  feedback: None
+  conversation_id: None
+  sync: True
+================================================================================
+
+================================================================================
+[2026-05-23 21:22:48.142] EVENT: AGENT_FLOW_START
+  query: winter camping kit under ₹3000
+  feedback: None
+  has_prior_state: False
+================================================================================
+
+================================================================================
+[2026-05-23 21:22:51.163] EVENT: AGENT_INTENT_PARSED
+  query: winter camping kit under ₹3000
+  query_type: shopping
+  budget: 3000.0
+  constraints:
+    [
+      "price under \u20b93000"
+    ]
+  implicit_needs:
+    [
+      "warmth",
+      "portability"
+    ]
+  context: outdoor activities
+================================================================================
+
+================================================================================
+[2026-05-23 21:22:52.331] EVENT: AGENT_REACT_STEP_1_DECISION
+  iteration: 1
+  action: plan
+  reason: No plan yet
+  params:
+    {}
+================================================================================
+
+================================================================================
+[2026-05-23 21:22:54.536] EVENT: AGENT_ACTION_PLAN_CREATED
+  categories:
+    [
+      {
+        "name": "Primary",
+        "budget_min": 1200.0,
+        "budget_max": 1500.0,
+        "priority": 1,
+        "queries": [
+          "winter camping kit best value under $1500"
+        ]
+      },
+      {
+        "name": "Secondary",
+        "budget_min": 750.0,
+        "budget_max": 1200.0,
+        "priority": 2,
+        "queries": [
+          "winter camping kit accessories under $750"
+        ]
+      }
+    ]
+  queue:
+    [
+      "Primary",
+      "Secondary"
+    ]
+  must_haves:
+    [
+      "Primary"
+    ]
+  nice_to_haves:
+    [
+      "Secondary"
+    ]
+================================================================================
+
+================================================================================
+[2026-05-23 21:22:55.812] EVENT: AGENT_REACT_STEP_2_DECISION
+  iteration: 2
+  action: search
+  reason: Search category Primary
+  params:
+    {
+      "category": "Primary"
+    }
+================================================================================
+
+================================================================================
+[2026-05-23 21:23:00.345] EVENT: AGENT_ACTION_SEARCH_COMPLETED
+  category: Primary
+  query: winter camping kit best value under $1500
+  budget_max: 1500.0
+  results_count: 5
+  top_results:
+    [
+      {
+        "name": "Winter Camping Gear Guide for Every Budget: Stay Warm & Prepared",
+        "price": 95.0,
+        "url": "https://ayamaya.com/blogs/how-to-choose/winter-camping-gear-guide-for-every-budget-stay-warm-prepared"
+      },
+      {
+        "name": "The Perfect Camp Kit, at Four Different Price Points | REI Expert Advice",
+        "price": 100.0,
+        "url": "https://www.rei.com/learn/expert-advice/the-perfect-camping-kit-at-four-different-price-points.html"
+      },
+      {
+        "name": "$1500 budget for equipment : r/CampingandHiking - Reddit",
+        "price": 200.0,
+        "url": "https://www.reddit.com/r/CampingandHiking/comments/1ea3jzd/1500_budget_for_equipment"
+      }
+    ]
+================================================================================
+
+================================================================================
+[2026-05-23 21:23:02.004] EVENT: AGENT_REACT_STEP_3_DECISION
+  iteration: 3
+  action: search
+  reason: Search category Secondary
+  params:
+    {
+      "category": "Secondary"
+    }
+================================================================================
+
+================================================================================
+[2026-05-23 21:23:05.112] EVENT: AGENT_ACTION_SEARCH_COMPLETED
+  category: Secondary
+  query: winter camping kit accessories under $750
+  budget_max: 1200.0
+  results_count: 5
+  top_results:
+    [
+      {
+        "name": "Shop These Winter Camping Essentials for Under $150 - Food & Wine",
+        "price": 8.0,
+        "url": "https://www.foodandwine.com/best-winter-camping-essentials-december-2025-11875242"
+      },
+      {
+        "name": "2023 Ultimate Winter Camping Gear List - YouTube",
+        "price": 100.0,
+        "url": "https://www.youtube.com/watch?v=VRzE7OVZ5TQ"
+      },
+      {
+        "name": "Winter camping gear recommendations under $100 - Facebook",
+        "price": 500.0,
+        "url": "https://www.facebook.com/groups/colorado14ers/posts/6148972458464629"
+      }
+    ]
+================================================================================
+
+================================================================================
+[2026-05-23 21:23:06.412] EVENT: AGENT_REACT_STEP_4_DECISION
+  iteration: 4
+  action: synthesize
+  reason: Compile recommendations
+  params:
+    {}
+================================================================================
+
+================================================================================
+[2026-05-23 21:23:07.800] EVENT: AGENT_ACTION_SYNTHESIZE_COMPLETED
+  suggestions_count: 6
+  suggestions:
+    [
+      {
+        "title": "Winter Camping Gear Guide for Every Budget: Stay Warm & Prepared",
+        "price": 95.0,
+        "category": "Primary"
+      },
+      {
+        "title": "The Perfect Camp Kit, at Four Different Price Points | REI Expert Advice",
+        "price": 100.0,
+        "category": "Primary"
+      },
+      {
+        "title": "$1500 budget for equipment : r/CampingandHiking - Reddit",
+        "price": 200.0,
+        "category": "Primary"
+      },
+      {
+        "title": "Shop These Winter Camping Essentials for Under $150 - Food & Wine",
+        "price": 8.0,
+        "category": "Secondary"
+      },
+      {
+        "title": "2023 Ultimate Winter Camping Gear List - YouTube",
+        "price": 100.0,
+        "category": "Secondary"
+      },
+      {
+        "title": "Winter camping gear recommendations under $100 - Facebook",
+        "price": 500.0,
+        "category": "Secondary"
+      }
+    ]
+  reasoning: These products were chosen to cater to a wide range of budgets, from under $150 to $3000, to provide options for winter camping gear. The selection includes expert advice from REI and a comprehensive gear list from YouTube, ensuring a well-rounded and informed choice. This variety allows for flexibility in planning a winter camping trip.
+  insights:
+    [
+      "Compared price fit, community sentiment, and stock availability.",
+      "Best price retailers are highlighted on each card.",
+      "Use compare to line up specs side by side."
+    ]
+================================================================================
+
+================================================================================
+[2026-05-23 21:23:07.810] EVENT: AGENT_FLOW_END
+  query: winter camping kit under ₹3000
+  iterations: 4
+  recommendations_count: 6
+  reasoning: These products were chosen to cater to a wide range of budgets, from under $150 to $3000, to provide options for winter camping gear. The selection includes expert advice from REI and a comprehensive gear list from YouTube, ensuring a well-rounded and informed choice. This variety allows for flexibility in planning a winter camping trip.
+================================================================================
+
+================================================================================
+[2026-05-23 21:23:07.814] EVENT: CHAT_SYNC_RESPONSE_SENT
+  user_id: demo-user-1
+  summary: These products were chosen to cater to a wide range of budgets, from under $150 to $3000, to provide options for winter camping gear. The selection includes expert advice from REI and a comprehensive gear list from YouTube, ensuring a well-rounded and informed choice. This variety allows for flexibility in planning a winter camping trip.
+  suggestions_count: 6
+  status: completed
+================================================================================
+
+================================================================================
+[2026-05-23 21:23:38.751] EVENT: CHAT_REQUEST_RECEIVED
+  user_id: demo-user-1
+  message: boAt Airdopes 141 cheapest price
+  feedback: None
+  conversation_id: None
+  sync: True
+================================================================================
+
+================================================================================
+[2026-05-23 21:23:38.752] EVENT: AGENT_FLOW_START
+  query: boAt Airdopes 141 cheapest price
+  feedback: None
+  has_prior_state: False
+================================================================================
+
+================================================================================
+[2026-05-23 21:23:41.940] EVENT: AGENT_INTENT_PARSED
+  query: boAt Airdopes 141 cheapest price
+  query_type: price_comparison
+  budget: 500.0
+  constraints:
+    [
+      "cheapest"
+    ]
+  implicit_needs:
+    [
+      "affordability"
+    ]
+  context: online_shopping
+================================================================================
+
+================================================================================
+[2026-05-23 21:23:43.476] EVENT: AGENT_REACT_STEP_1_DECISION
+  iteration: 1
+  action: plan
+  reason: No plan yet
+  params:
+    {}
+================================================================================
+
+================================================================================
+[2026-05-23 21:23:45.456] EVENT: AGENT_ACTION_PLAN_CREATED
+  categories:
+    [
+      {
+        "name": "Primary",
+        "budget_min": 200.0,
+        "budget_max": 250.0,
+        "priority": 1,
+        "queries": [
+          "boAt Airdopes 141 best value under $250"
+        ]
+      },
+      {
+        "name": "Secondary",
+        "budget_min": 125.0,
+        "budget_max": 200.0,
+        "priority": 2,
+        "queries": [
+          "boAt Airdopes 141 accessories under $125"
+        ]
+      }
+    ]
+  queue:
+    [
+      "Primary",
+      "Secondary"
+    ]
+  must_haves:
+    [
+      "Primary"
+    ]
+  nice_to_haves:
+    [
+      "Secondary"
+    ]
+================================================================================
+
+================================================================================
+[2026-05-23 21:23:46.958] EVENT: AGENT_REACT_STEP_2_DECISION
+  iteration: 2
+  action: search
+  reason: Search category Primary
+  params:
+    {
+      "category": "Primary"
+    }
+================================================================================
+
+================================================================================
+[2026-05-23 21:23:50.873] EVENT: AGENT_ACTION_SEARCH_COMPLETED
+  category: Primary
+  query: boAt Airdopes 141 best value under $250
+  budget_max: 250.0
+  results_count: 5
+  top_results:
+    [
+      {
+        "name": "Buy Earbuds, Headphones, Earphones at India\u2019s No.1 Earwear Brand: boAt",
+        "price": null,
+        "url": "https://www.boat-lifestyle.com/"
+      },
+      {
+        "name": "boAt Headphones Online in India at Best Prices - Flipkart",
+        "price": null,
+        "url": "https://www.flipkart.com/audio-video/headphones/boat~brand/pr?sid=0pm,fcn"
+      },
+      {
+        "name": "Amazon.in: boAt",
+        "price": null,
+        "url": "https://www.amazon.in/stores/boAt/page/C45AC738-6190-4344-A3E4-CDF7B426BC8C"
+      }
+    ]
+================================================================================
+
+================================================================================
+[2026-05-23 21:23:52.059] EVENT: AGENT_REACT_STEP_3_DECISION
+  iteration: 3
+  action: search
+  reason: Search category Secondary
+  params:
+    {
+      "category": "Secondary"
+    }
+================================================================================
+
+================================================================================
+[2026-05-23 21:23:55.510] EVENT: AGENT_ACTION_SEARCH_COMPLETED
+  category: Secondary
+  query: boAt Airdopes 141 accessories under $125
+  budget_max: 200.0
+  results_count: 5
+  top_results:
+    [
+      {
+        "name": "Wholesale Boat Airdopes 141 Accessories - Durable & Shockproof",
+        "price": null,
+        "url": "https://www.alibaba.com/showroom/boat-airdopes-141.html"
+      },
+      {
+        "name": "boAt Airdopes 141 (Single Parts) - EasyParts",
+        "price": null,
+        "url": "https://easyparts.in/products/boat-airdopes-141-all-parts"
+      },
+      {
+        "name": "Buy boAt Airdopes 141 ANC TWS Earbuds \u2714\ufe0f 70% OFF",
+        "price": null,
+        "url": "https://www.shopyvision.com/product/boat-airdopes-141-anc-tws-earbuds-with-42-hrs-playback"
+      }
+    ]
+================================================================================
+
+================================================================================
+[2026-05-23 21:23:57.270] EVENT: AGENT_REACT_STEP_4_DECISION
+  iteration: 4
+  action: synthesize
+  reason: Compile recommendations
+  params:
+    {}
+================================================================================
+
+================================================================================
+[2026-05-23 21:23:59.245] EVENT: AGENT_ACTION_SYNTHESIZE_COMPLETED
+  suggestions_count: 6
+  suggestions:
+    [
+      {
+        "title": "Buy Earbuds, Headphones, Earphones at India\u2019s No.1 Earwear Brand: boAt",
+        "price": 99.0,
+        "category": "Primary"
+      },
+      {
+        "title": "boAt Headphones Online in India at Best Prices - Flipkart",
+        "price": 99.0,
+        "category": "Primary"
+      },
+      {
+        "title": "Amazon.in: boAt",
+        "price": 99.0,
+        "category": "Primary"
+      },
+      {
+        "title": "Wholesale Boat Airdopes 141 Accessories - Durable & Shockproof",
+        "price": 99.0,
+        "category": "Secondary"
+      },
+      {
+        "title": "boAt Airdopes 141 (Single Parts) - EasyParts",
+        "price": 99.0,
+        "category": "Secondary"
+      },
+      {
+        "title": "Buy boAt Airdopes 141 ANC TWS Earbuds \u2714\ufe0f 70% OFF",
+        "price": 99.0,
+        "category": "Secondary"
+      }
+    ]
+  reasoning: These products were chosen because they offer a range of earwear options from boAt, a popular brand in India, at competitive prices. The selection includes earbuds, headphones, and accessories, catering to different needs and preferences within the $500 budget. This variety ensures a comprehensive shopping experience.
+  insights:
+    [
+      "Compared price fit, community sentiment, and stock availability.",
+      "Best price retailers are highlighted on each card.",
+      "Use compare to line up specs side by side."
+    ]
+================================================================================
+
+================================================================================
+[2026-05-23 21:23:59.249] EVENT: AGENT_FLOW_END
+  query: boAt Airdopes 141 cheapest price
+  iterations: 4
+  recommendations_count: 6
+  reasoning: These products were chosen because they offer a range of earwear options from boAt, a popular brand in India, at competitive prices. The selection includes earbuds, headphones, and accessories, catering to different needs and preferences within the $500 budget. This variety ensures a comprehensive shopping experience.
+================================================================================
+
+================================================================================
+[2026-05-23 21:23:59.250] EVENT: CHAT_SYNC_RESPONSE_SENT
+  user_id: demo-user-1
+  summary: These products were chosen because they offer a range of earwear options from boAt, a popular brand in India, at competitive prices. The selection includes earbuds, headphones, and accessories, catering to different needs and preferences within the $500 budget. This variety ensures a comprehensive shopping experience.
+  suggestions_count: 6
+  status: completed
+================================================================================
+
+================================================================================
+[2026-05-23 21:26:16.016] EVENT: CHAT_REQUEST_RECEIVED
+  user_id: demo-user-1
+  message: best trekking shoes review
+  feedback: None
+  conversation_id: None
+  sync: True
+================================================================================
+
+================================================================================
+[2026-05-23 21:26:16.018] EVENT: AGENT_FLOW_START
+  query: best trekking shoes review
+  feedback: None
+  has_prior_state: False
+================================================================================
+
+================================================================================
+[2026-05-23 21:26:22.480] EVENT: AGENT_FAST_PATH_TRIGGERED
+  query: best trekking shoes review
+  intent:
+    {
+      "query_type": "single",
+      "item": "best trekking shoes review",
+      "budget": null,
+      "constraints": [],
+      "implicit_needs": [],
+      "context": "single",
+      "people": null,
+      "duration": null
+    }
+================================================================================
+
+================================================================================
+[2026-05-23 21:26:22.483] EVENT: AGENT_DIRECT_SEARCH_START
+  query: best trekking shoes review
+================================================================================
+
+================================================================================
+[2026-05-23 21:26:26.273] EVENT: AGENT_DIRECT_SEARCH_INTENT_PARSED
+  query: best trekking shoes review
+  intent:
+    {
+      "query_type": "single",
+      "item": "best trekking shoes review",
+      "budget": null,
+      "constraints": [],
+      "implicit_needs": [],
+      "context": "single",
+      "people": null,
+      "duration": null
+    }
+  budget: 500.0
+================================================================================
+
+================================================================================
+[2026-05-23 21:26:32.540] EVENT: AGENT_DIRECT_SEARCH_PRODUCTS_SEARCHED
+  query: best trekking shoes review
+  results_count: 5
+  results:
+    [
+      {
+        "name": "Best Hiking Shoes for Men of 2026, 100K Miles Hiked | CleverHiker",
+        "price": 175.0,
+        "url": "https://www.cleverhiker.com/footwear/best-hiking-shoes-men"
+      },
+      {
+        "name": "30+ Hiking Shoe Reviews | RunRepeat",
+        "price": null,
+        "url": "https://runrepeat.com/catalog/hiking-shoes"
+      },
+      {
+        "name": "The Best Hiking Shoes Of 2026 | Stop Trusting Sponsored Reviews!",
+        "price": null,
+        "url": "https://www.youtube.com/watch?v=UVo5SGvFKFg"
+      },
+      {
+        "name": "13 Best Men's Hiking Shoes of 2026 (Tested) - Treeline Review",
+        "price": null,
+        "url": "https://www.treelinereview.com/gearreviews/best-hiking-shoes"
+      },
+      {
+        "name": "The 10 Best Hiking Boots of 2026: Tested | REI Expert Advice",
+        "price": null,
+        "url": "https://www.rei.com/learn/expert-advice/the-best-hiking-boots.html"
+      }
+    ]
+================================================================================
+
+================================================================================
+[2026-05-23 21:26:39.402] EVENT: AGENT_DIRECT_SEARCH_DETAILS_COMPLETED
+  product_name: Best Hiking Shoes for Men of 2026, 100K Miles Hiked | CleverHiker
+  url: https://www.cleverhiker.com/footwear/best-hiking-shoes-men
+  price: None
+  rating: None
+  in_stock: None
+================================================================================
+
+================================================================================
+[2026-05-23 21:26:46.684] EVENT: AGENT_DIRECT_SEARCH_DETAILS_COMPLETED
+  product_name: 30+ Hiking Shoe Reviews | RunRepeat
+  url: https://runrepeat.com/catalog/hiking-shoes
+  price: None
+  rating: None
+  in_stock: None
+================================================================================
+
+================================================================================
+[2026-05-23 21:26:58.750] EVENT: AGENT_DIRECT_SEARCH_DETAILS_COMPLETED
+  product_name: The Best Hiking Shoes Of 2026 | Stop Trusting Sponsored Reviews!
+  url: https://www.youtube.com/watch?v=UVo5SGvFKFg
+  price: None
+  rating: None
+  in_stock: None
+================================================================================
+
+================================================================================
+[2026-05-23 21:26:58.760] EVENT: AGENT_DIRECT_SEARCH_REVIEWS_COMPLETED
+  product_name: Best Hiking Shoes for Men of 2026, 100K Miles Hiked | CleverHiker
+  sentiment_score: 0.72
+  pros:
+    [
+      "Excellent value for the specs",
+      "Easy to upgrade later",
+      "Strong community recommendation"
+    ]
+  cons:
+    [
+      "Fan can be loud under load",
+      "Build quality is adequate not premium"
+    ]
+================================================================================
+
+================================================================================
+[2026-05-23 21:27:00.287] EVENT: AGENT_DIRECT_SEARCH_SYNTHESIZE_COMPLETED
+  suggestions_count: 3
+  suggestions:
+    [
+      {
+        "title": "Best Hiking Shoes for Men of 2026, 100K Miles Hiked | CleverHiker",
+        "price": 175.0,
+        "category": "Top picks"
+      },
+      {
+        "title": "30+ Hiking Shoe Reviews | RunRepeat",
+        "price": 99.0,
+        "category": "Top picks"
+      },
+      {
+        "title": "The Best Hiking Shoes Of 2026 | Stop Trusting Sponsored Reviews!",
+        "price": 99.0,
+        "category": "Top picks"
+      }
+    ]
+  reasoning: These products were chosen for their unbiased and in-depth reviews of hiking shoes, with CleverHiker and RunRepeat offering extensive testing and comparison of over 30 shoes. The third source, "Stop Trusting Sponsored Reviews!", provides an alternative perspective, highlighting the best options for 2026. All sources consider high-quality options within a $500 budget.
+  insights:
+    [
+      "Compared price fit, community sentiment, and stock availability.",
+      "Best price retailers are highlighted on each card.",
+      "Use compare to line up specs side by side."
+    ]
+================================================================================
+
+================================================================================
+[2026-05-23 21:27:00.290] EVENT: AGENT_FAST_PATH_COMPLETED
+  query: best trekking shoes review
+  recommendations_count: 3
+  reasoning: These products were chosen for their unbiased and in-depth reviews of hiking shoes, with CleverHiker and RunRepeat offering extensive testing and comparison of over 30 shoes. The third source, "Stop Trusting Sponsored Reviews!", provides an alternative perspective, highlighting the best options for 2026. All sources consider high-quality options within a $500 budget.
+================================================================================
+
+================================================================================
+[2026-05-23 21:27:00.292] EVENT: CHAT_SYNC_RESPONSE_SENT
+  user_id: demo-user-1
+  summary: These products were chosen for their unbiased and in-depth reviews of hiking shoes, with CleverHiker and RunRepeat offering extensive testing and comparison of over 30 shoes. The third source, "Stop Trusting Sponsored Reviews!", provides an alternative perspective, highlighting the best options for 2026. All sources consider high-quality options within a $500 budget.
+  suggestions_count: 3
+  status: completed
+================================================================================
+
+================================================================================
+[2026-05-23 23:07:51.243] EVENT: CHAT_REQUEST_RECEIVED
+  user_id: demo-user-1
+  message: Give me a deeper analysis of these products
+  feedback: None
+  conversation_id: None
+  sync: True
+================================================================================
+
+================================================================================
+[2026-05-23 23:07:51.259] EVENT: AGENT_FLOW_START
+  query: Give me a deeper analysis of these products
+  feedback: None
+  has_prior_state: False
+================================================================================
+
+================================================================================
+[2026-05-23 23:07:53.162] EVENT: AGENT_FAST_PATH_TRIGGERED
+  query: Give me a deeper analysis of these products
+  intent:
+    {
+      "query_type": "single",
+      "item": "Give me a deeper analysis of these products",
+      "budget": null,
+      "constraints": [],
+      "implicit_needs": [],
+      "context": "single",
+      "people": null,
+      "duration": null
+    }
+================================================================================
+
+================================================================================
+[2026-05-23 23:07:53.163] EVENT: AGENT_DIRECT_SEARCH_START
+  query: Give me a deeper analysis of these products
+================================================================================
+
+================================================================================
+[2026-05-23 23:07:54.487] EVENT: AGENT_DIRECT_SEARCH_INTENT_PARSED
+  query: Give me a deeper analysis of these products
+  intent:
+    {
+      "query_type": "single",
+      "item": "Give me a deeper analysis of these products",
+      "budget": null,
+      "constraints": [],
+      "implicit_needs": [],
+      "context": "single",
+      "people": null,
+      "duration": null
+    }
+  budget: 500.0
+================================================================================
+
+================================================================================
+[2026-05-23 23:07:57.979] EVENT: AGENT_DIRECT_SEARCH_PRODUCTS_SEARCHED
+  query: Give me a deeper analysis of these products
+  results_count: 5
+  results:
+    [
+      {
+        "name": "What one thing would you buy for $500 or less? - Reddit",
+        "price": null,
+        "url": "https://www.reddit.com/r/BuyItForLife/comments/ramtkl/what_one_thing_would_you_buy_for_500_or_less"
+      },
+      {
+        "name": "Things You Can Buy on Amazon for Less Than a Dollar - YouTube",
+        "price": null,
+        "url": "https://www.youtube.com/watch?v=RPmd51LTB0k"
+      },
+      {
+        "name": "10 Dumb Ecommerce Products Quietly Making Millions Right Now",
+        "price": null,
+        "url": "https://www.youtube.com/watch?v=AfjxZW31wUs"
+      },
+      {
+        "name": "Therabody | World-Leading Wellness Solutions\n\n        | Therabody US",
+        "price": null,
+        "url": "https://www.therabody.com"
+      },
+      {
+        "name": "Beware of unusually deep discounts when shopping online | Idaho Statesman",
+        "price": null,
+        "url": "https://www.idahostatesman.com/news/business/biz-columns-blogs/article130664084.html"
+      }
+    ]
+================================================================================
+
+================================================================================
+[2026-05-23 23:08:02.925] EVENT: AGENT_DIRECT_SEARCH_DETAILS_COMPLETED
+  product_name: What one thing would you buy for $500 or less? - Reddit
+  url: https://www.reddit.com/r/BuyItForLife/comments/ramtkl/what_one_thing_would_you_buy_for_500_or_less
+  price: None
+  rating: None
+  in_stock: None
+================================================================================
+
+================================================================================
+[2026-05-23 23:08:13.657] EVENT: AGENT_DIRECT_SEARCH_DETAILS_COMPLETED
+  product_name: Things You Can Buy on Amazon for Less Than a Dollar - YouTube
+  url: https://www.youtube.com/watch?v=RPmd51LTB0k
+  price: None
+  rating: None
+  in_stock: None
+================================================================================
+
+================================================================================
+[2026-05-23 23:08:25.969] EVENT: AGENT_DIRECT_SEARCH_DETAILS_COMPLETED
+  product_name: 10 Dumb Ecommerce Products Quietly Making Millions Right Now
+  url: https://www.youtube.com/watch?v=AfjxZW31wUs
+  price: None
+  rating: None
+  in_stock: None
+================================================================================
+
+================================================================================
+[2026-05-23 23:08:25.974] EVENT: AGENT_DIRECT_SEARCH_REVIEWS_COMPLETED
+  product_name: What one thing would you buy for $500 or less? - Reddit
+  sentiment_score: 0.72
+  pros:
+    [
+      "Excellent value for the specs",
+      "Easy to upgrade later",
+      "Strong community recommendation"
+    ]
+  cons:
+    [
+      "Fan can be loud under load",
+      "Build quality is adequate not premium"
+    ]
+================================================================================
+
+================================================================================
+[2026-05-23 23:08:27.390] EVENT: AGENT_DIRECT_SEARCH_SYNTHESIZE_COMPLETED
+  suggestions_count: 3
+  suggestions:
+    [
+      {
+        "title": "What one thing would you buy for $500 or less? - Reddit",
+        "price": 99.0,
+        "category": "Top picks"
+      },
+      {
+        "title": "Things You Can Buy on Amazon for Less Than a Dollar - YouTube",
+        "price": 99.0,
+        "category": "Top picks"
+      },
+      {
+        "title": "10 Dumb Ecommerce Products Quietly Making Millions Right Now",
+        "price": 99.0,
+        "category": "Top picks"
+      }
+    ]
+  reasoning: Based on the provided insights, unique and affordable products were chosen, such as those found on Amazon for under a dollar or unusual ecommerce items making millions. These products offer a high potential for value and profitability within the $500 budget. They were selected for their innovative and often overlooked nature.
+  insights:
+    [
+      "Compared price fit, community sentiment, and stock availability.",
+      "Best price retailers are highlighted on each card.",
+      "Use compare to line up specs side by side."
+    ]
+================================================================================
+
+================================================================================
+[2026-05-23 23:08:27.393] EVENT: AGENT_FAST_PATH_COMPLETED
+  query: Give me a deeper analysis of these products
+  recommendations_count: 3
+  reasoning: Based on the provided insights, unique and affordable products were chosen, such as those found on Amazon for under a dollar or unusual ecommerce items making millions. These products offer a high potential for value and profitability within the $500 budget. They were selected for their innovative and often overlooked nature.
+================================================================================
+
+================================================================================
+[2026-05-23 23:08:27.397] EVENT: CHAT_SYNC_RESPONSE_SENT
+  user_id: demo-user-1
+  summary: Based on the provided insights, unique and affordable products were chosen, such as those found on Amazon for under a dollar or unusual ecommerce items making millions. These products offer a high potential for value and profitability within the $500 budget. They were selected for their innovative and often overlooked nature.
+  suggestions_count: 3
+  status: completed
+================================================================================
+
